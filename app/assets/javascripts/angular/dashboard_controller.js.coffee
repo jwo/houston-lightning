@@ -1,0 +1,1 @@
+LightningTalks.controller "DashboardController", ($scope) ->

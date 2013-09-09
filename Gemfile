@@ -12,6 +12,7 @@ gem 'uglifier'
 gem 'bootstrap-sass', :git => 'git://github.com/thomas-mcdonald/bootstrap-sass.git', :branch => '3'
 gem 'angular-rails'
 gem 'font-awesome-rails'
+gem 'dotenv-rails'
 
 group :production do
   gem 'rails_12factor'

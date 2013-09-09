@@ -11,6 +11,8 @@ HoustonLightning::Application.routes.draw do
     end
   end
 
+  resources :talks, only: [:index, :create], :constraints => FormatTest.new(:json)
+
   get '*foo', :to => 'angular#index', :constraints => FormatTest.new(:html)
   get '/', :to => 'angular#index', :constraints => FormatTest.new(:html)
 end

@@ -1,4 +1,4 @@
-//= require modernizr
 //= require jquery
+//= require modernizr
 //= require angular
 //= require angular-application

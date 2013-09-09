@@ -6,35 +6,24 @@
     <title>Title</title>
   </head>
   <body>
-    <div class="container">
-      <div class="row" ng-app='LightningTalks'>
-        <h1>Hello Angular</h1>
-        <input ng-model="myText"></input>{{ myText }}
+    <div class="container" ng-app='LightningTalks'>
+      <div class="row">
+        <h1>Houston Ruby Lightning Talks</h1>
       </div>
 
-      <div class="row" ng-controller='TalkController'>
-        <aside class="" id="sidebar">
-          <h5>Talks</h5>
-          <ul>
-            <li>Talk</li>
-            </li>
-          </ul>
-        </aside>
+      <div class="row">
 
-        <section id="main">
-          <div>
-            [previous]
-          </div>
-          <div>
-            [current]
-          </div>
-          <div>
-            count-down
-          </div>
-          <div>
-            [next]
+        <section id="main" class='col-xs-12 col-md-9 col-md-push-3' ng-controller='DashboardController'>
+          <div ng-view=true>
           </div>
         </section>
+
+        <aside class="col-xs-12 col-md-3 col-md-pull-9" id="sidebar" ng-controller='SidebarController' ng-init='loadTalks()'>
+          <h5>Talks</h5>
+          <ul ng-repeat="t in talks">
+            <li>{{t.name}} - {{t.twitter}}</li>
+          </ul>
+        </aside>
       </div>
     </div>
   </body>

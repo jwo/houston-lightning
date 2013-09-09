@@ -1,0 +1,25 @@
+<h2>Submit new Lightning Talk</h2>
+<form ng-submit="register()" method="post">
+  <div ng-class="{'has-error': !validName(), 'form-group': true }">
+    <label class='control-label' for="name">Your name</label>
+    <input type="text" class="form-control input-lg" id="name" placeholder="Enter name" ng-model='talk.name' ng-change="validName()">
+    <span class='help-block' ng-show='!validName()'>{{ NameValidationMessage }}</span>
+  </div>
+  <div ng-class="{'has-error': !validTwitter(), 'form-group': true }">
+    <label class='control-label' for="twitter">Your twitter handle</label>
+    <input type="text" class="form-control input-lg" id="twitter" placeholder="Enter twitter" ng-model='talk.twitter' ng-change='validTwitter()'>
+    <span class='help-block' ng-show='!validTwitter()'>{{ TwitterValidationMessage }}</span>
+  </div>
+  <div ng-class="{'has-error': !validEmail(), 'form-group': true }">
+    <label class='control-label' for="email">Your Email address (not publicly shown)</label>
+    <input type="email" class="form-control input-lg" id="email" placeholder="Enter email" ng-model='talk.email' ng-change='validEmail()'>
+    <span class='help-block' ng-show='!validEmail()'>{{ EmailValidationMessage }}</span>
+  </div>
+  <div ng-class="{'has-error': !validDescription(), 'form-group': true }">
+    <label class='control-label' for="description">Description</label>
+    <textarea class="form-control input-lg" rows="3" id='description' ng-model='talk.description' ng-change='validDescription'></textarea>
+    <span class='help-block' ng-show='!validDescription()'>{{ DescriptionValidationMessage }}</span>
+  </div>
+  <button type="submit" ng-class="{disabled: !allValid(), btn:true, 'btn-primary':true, 'btn-lg':true}" >Submit</button>
+
+</form>
