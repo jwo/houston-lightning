@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: houston-lightning_development
+  pool: 5
+  username: 
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: houston-lightning_test
+  pool: 5
+  username: 
