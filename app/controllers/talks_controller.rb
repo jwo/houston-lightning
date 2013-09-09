@@ -1,3 +1,4 @@
+require 'talk_serializer'
 class TalksController < ApplicationController
   include ActionController::StrongParameters
 
@@ -8,7 +9,12 @@ class TalksController < ApplicationController
 
   def create
     @talk = Talk.new talk_params
-    @talk.save
+    if @talk.save
+      Pusher["houston-lightning-#{Rails.env}"].trigger('newTalk', {
+        newTalk: TalkSerializer.new(@talk).as_json
+      })
+    end
+
     render json: @talk
   end
 

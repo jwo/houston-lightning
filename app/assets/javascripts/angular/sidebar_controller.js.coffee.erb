@@ -1,0 +1,13 @@
+LightningTalks.controller "SidebarController", ($scope, Talk) ->
+  $scope.talks = Talk.all()
+
+  $scope.loadTalks = () ->
+    Talk.loadTalks()
+
+  $scope.pusher = new Pusher('<%= ENV['PUSHER_ID']%>', {encrypted: true})
+  $scope.pusherChannel = $scope.pusher.subscribe('houston-lightning-<%=Rails.env%>')
+  $scope.pusherChannel.bind('newTalk', (data) ->
+    $scope.$apply( ->
+      Talk.addTalk(data['newTalk']['talk'])
+    )
+  )

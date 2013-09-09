@@ -13,6 +13,7 @@ gem 'bootstrap-sass', :git => 'git://github.com/thomas-mcdonald/bootstrap-sass.g
 gem 'angular-rails'
 gem 'font-awesome-rails'
 gem 'dotenv-rails'
+gem 'pusher'
 
 group :production do
   gem 'rails_12factor'

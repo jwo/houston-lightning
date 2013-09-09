@@ -1,6 +1,6 @@
 LightningTalks.controller "TalkController", ($scope, $http, $location, Talk) ->
 
-  $scope.talk = {name: 'jwo cool', description: 'jesse is the best, yo', email: 'jesse@comalproductions.com', twitter: 'jwo'}
+  $scope.talk = {name: '', description: '', email: '', twitter: ''}
 
   $scope.validName = () ->
     if $scope.talk.name.length < 5
@@ -45,7 +45,6 @@ LightningTalks.controller "TalkController", ($scope, $http, $location, Talk) ->
     if $scope.allValid()
       $http.post("/talks", talk: $scope.talk)
         .success (data, status, headers, config) ->
-          Talk.addTalk(data['talk'])
           $location.path('/')
         .error (data, status, headers, config) ->
           alert(data)
