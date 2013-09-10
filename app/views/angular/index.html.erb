@@ -14,12 +14,12 @@
 
       <div class="row">
 
-        <section id="main" class='col-xs-12 col-md-9 col-md-push-3' ng-controller='DashboardController'>
+        <section id="main" class='col-xs-12 col-md-9 col-md-push-3'>
           <div ng-view=true>
           </div>
         </section>
 
-        <aside class="col-xs-12 col-md-3 col-md-pull-9" id="sidebar" ng-controller='SidebarController' ng-init='loadTalks()'>
+        <aside class="col-xs-12 col-md-3 col-md-pull-9" id="sidebar" ng-controller='SidebarController' ng-init='preloadTalks(<%= json_for @talks %>)'>
           <div class="talks panel panel-default">
             <div class="panel-heading">
               <h5>Talks</h5>

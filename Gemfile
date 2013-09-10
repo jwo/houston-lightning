@@ -15,6 +15,7 @@ gem 'font-awesome-rails'
 gem 'dotenv-rails'
 gem 'pusher'
 gem 'asset_sync'
+gem 'eco'
 
 group :production do
   gem 'rails_12factor'
