@@ -23,6 +23,15 @@ Easiest to deploy to heroku, but anything will do. With heroku, look at the
    exists)
 
 
+```ruby
+heroku config:add AWS_ACCESS_KEY_ID=xxxx
+heroku config:add AWS_SECRET_ACCESS_KEY=xxxx
+heroku config:add FOG_DIRECTORY=xxxx
+heroku config:add FOG_PROVIDER=AWS
+
+```
+
+
 Getting Started Developing
 -------------------------
 

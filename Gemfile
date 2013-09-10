@@ -14,6 +14,7 @@ gem 'angular-rails'
 gem 'font-awesome-rails'
 gem 'dotenv-rails'
 gem 'pusher'
+gem 'asset_sync'
 
 group :production do
   gem 'rails_12factor'
