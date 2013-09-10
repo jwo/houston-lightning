@@ -1,15 +1,31 @@
-<div class="pull-right">
-  <a ng-href="/register" class="btn btn-default">Register a Talk</a>
+<div class='clearfix'>
+  <div class="pull-right">
+    <p>
+      <a ng-href="/register" class="btn btn-default">Register a Talk</a>
+    </p>
+  </div>
 </div>
-<div>
-  [previous]
+
+<div ng-repeat="talk in talks | filter:isCurrentTalk" ng-show="$last">
+  
+  <div class="progress">
+    <div class="progress-bar progress-bar-success" role="progressbar"
+      aria-valuenow="{{progressAsInt}}" aria-valuemin="0" aria-valuemax="100"
+      ng-style="{width: progressAsPercentage()}">
+      <span class="sr-only">{{progressAsInt}} Complete</span>
+    </div>
+  </div>
+
+  <div>
+    <img></img>
+    <h1>{{talk.name}}</h1>
+    <p>{{talk.description}}</p>
+    <h3>t: {{talk.twitter}}</h3>
+  </div>
 </div>
-<div>
-  [current]
-</div>
-<div>
-  count-down
-</div>
-<div>
-  [next]
+<div ng-repeat="talk in talks | filter:remainingTalks" ng-show="$first">
+  [on deck]
+  <img></img>
+  <h5>{{talk.name}}</h5>
+  <h6>t: {{talk.twitter}}</h6>
 </div>

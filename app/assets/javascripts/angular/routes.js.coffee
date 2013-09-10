@@ -6,5 +6,8 @@ LightningTalks.config ($routeProvider, $locationProvider) ->
     .when "/register",
       templateUrl: "../../assets/dashboard/new.html"
       controller: "TalkController"
+    .when '/admin',
+      templateUrl: "../../assets/admin/index.html"
+      controller: 'AdminController'
     .otherwise redirectTo: "/"
   $locationProvider.html5Mode(true)

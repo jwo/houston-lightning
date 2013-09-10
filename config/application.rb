@@ -21,5 +21,6 @@ module HoustonLightning
     # config.i18n.default_locale = :de
 
     config.secret_key_base = ENV['SECRET_KEY_BASE']
+    config.api_only = false
   end
 end

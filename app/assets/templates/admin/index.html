@@ -1,0 +1,39 @@
+
+<div ng-show="isAdmin()">
+
+  <h1>Talk Start Admin</h1>
+  <div class='alert alert-success' ng-show="statusMessage.length > 0">{{statusMessage}}</div>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Talk</th>
+        <th>By</th>
+        <th>Start</th>
+        <th>Destroy</th>
+      </tr>
+    <tbody>
+      <tr ng-repeat="talk in talks" ng-class="{active: talk.active}">
+        <td>
+          <h2>{{talk.name}}</h2>
+          <p>{{talk.description}}</p>
+        </td>
+        <td>{{talk.twitter}}</td>
+        <td><button ng-click="start(talk)" ng-show='!hasStarted(talk)' class="btn btn-success">Start</button>
+        <td><button ng-click="destroy(talk)" class='btn btn-danger'>Destroy</button>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div ng-show="!isAdmin()">
+  <div class='alert alert-warning'>If you want admin, let's login!</div>
+  <form ng-submit="authenticate()">
+    <div ng-class="{'has-error': !validPassword(), 'form-group': true }">
+      <label class='control-label' for="Password">The Password</label>
+      <input type="password" class="form-control input-lg" id="password" placeholder="Enter password" ng-model='password' ng-change='validpassword()'>
+      <span class='help-block' ng-show='!validPassword()'>{{ PasswordValidationMessage }}</span>
+    </div>
+    <button type="submit" ng-class="{disabled: !allValid(), btn:true, 'btn-primary':true, 'btn-lg':true}" >Submit</button>
+
+  </form>
+</div>

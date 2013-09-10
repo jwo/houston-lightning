@@ -1,8 +1,9 @@
 <h2>Submit new Lightning Talk</h2>
 <form ng-submit="register()" method="post">
   <div ng-class="{'has-error': !validName(), 'form-group': true }">
-    <label class='control-label' for="name">Your name</label>
-    <input type="text" class="form-control input-lg" id="name" placeholder="Enter name" ng-model='talk.name' ng-change="validName()">
+    <label class='control-label' for="name">Talk Name</label>
+    <input type="text" class="form-control input-lg" id="name"
+    placeholder="Enter name of talk" ng-model='talk.name' ng-change="validName()">
     <span class='help-block' ng-show='!validName()'>{{ NameValidationMessage }}</span>
   </div>
   <div ng-class="{'has-error': !validTwitter(), 'form-group': true }">

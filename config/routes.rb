@@ -12,6 +12,9 @@ HoustonLightning::Application.routes.draw do
   end
 
   resources :talks, only: [:index, :create], :constraints => FormatTest.new(:json)
+  post '/admin/authenticate', to: 'admin#authenticate', :constraints => FormatTest.new(:json)
+  delete '/admin/destroy', to: 'admin#destroy', :constraints => FormatTest.new(:json)
+  post '/admin/start', to: 'admin#start', :constraints => FormatTest.new(:json)
 
   get '*foo', :to => 'angular#index', :constraints => FormatTest.new(:html)
   get '/', :to => 'angular#index', :constraints => FormatTest.new(:html)

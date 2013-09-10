@@ -3,7 +3,7 @@ class TalksController < ApplicationController
   include ActionController::StrongParameters
 
   def index
-    @talks = Talk.all
+    @talks = Talk.order("created_at ASC").all
     render json: @talks
   end
 

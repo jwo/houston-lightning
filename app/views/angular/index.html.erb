@@ -8,7 +8,7 @@
   <body>
     <div class="container" ng-app='LightningTalks'>
       <div class="row">
-        <h1>Houston Ruby Lightning Talks</h1>
+        <a ng-href="/"><h1>Houston Ruby Lightning Talks</h1></a>
       </div>
 
       <div class="row">
@@ -20,9 +20,11 @@
 
         <aside class="col-xs-12 col-md-3 col-md-pull-9" id="sidebar" ng-controller='SidebarController' ng-init='loadTalks()'>
           <h5>Talks</h5>
-          <ul ng-repeat="t in talks">
-            <li>{{t.name}} - {{t.twitter}}</li>
-          </ul>
+          <ol class='talks'>
+            <li ng-repeat="t in talks" >
+              <span ng-class='{current: t.current_talk}'>{{t.name}} - {{t.twitter}}</span>
+            </li>
+          </ol>
         </aside>
       </div>
     </div>

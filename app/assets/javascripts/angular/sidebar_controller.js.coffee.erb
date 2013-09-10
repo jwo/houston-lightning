@@ -11,3 +11,13 @@ LightningTalks.controller "SidebarController", ($scope, Talk) ->
       Talk.addTalk(data['newTalk']['talk'])
     )
   )
+  $scope.pusherChannel.bind('destroyTalk', (data) ->
+    $scope.$apply( ->
+      Talk.destroyTalk(data['id'])
+    )
+  )
+  $scope.pusherChannel.bind('startTalk', (data) ->
+    $scope.$apply( ->
+      Talk.startTalk(data['id'])
+    )
+  )
