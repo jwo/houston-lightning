@@ -48,7 +48,7 @@ LightningTalks.controller "AdminController", ($scope, $http, Talk, $timeout) ->
     $http.post('/admin/start', talk: talk)
       .success (data) ->
         Talk.startTalk(talk.id)
-        $scope.statusMessage = "Deleted: #{talk.description}"
+        $scope.statusMessage = "Started: #{talk.description}"
         $timeout( ->
           $scope.statusMessage = ''
         , 3000)

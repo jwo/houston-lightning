@@ -3,12 +3,13 @@
   <head>
     <%= stylesheet_link_tag :application, :media => :all %>
     <%= javascript_include_tag :application %>
-    <title>Title</title>
+    <link href="http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700" rel="stylesheet" type="text/css" />
+    <title>Houston Lightning Talks</title>
   </head>
   <body>
     <div class="container" ng-app='LightningTalks'>
       <div class="row">
-        <a ng-href="/"><h1>Houston Ruby Lightning Talks</h1></a>
+        <a ng-href="/"><h1 class="brand">Houston Ruby Lightning Talks</h1></a>
       </div>
 
       <div class="row">
@@ -19,12 +20,17 @@
         </section>
 
         <aside class="col-xs-12 col-md-3 col-md-pull-9" id="sidebar" ng-controller='SidebarController' ng-init='loadTalks()'>
-          <h5>Talks</h5>
-          <ol class='talks'>
-            <li ng-repeat="t in talks" >
-              <span ng-class='{current: t.current_talk}'>{{t.name}} - {{t.twitter}}</span>
-            </li>
-          </ol>
+          <div class="talks panel panel-default">
+            <div class="panel-heading">
+              <h5>Talks</h5>
+            </div>
+              <div class="list-group-item" ng-repeat="t in talks" >
+                <div ng-class='{current: t.current_talk}'>
+                  <h6>{{$index+1}}: {{t.twitter}}</h5>
+                  <p>{{t.name}}</p>
+                </div>
+              </div>
+          </div>
         </aside>
       </div>
     </div>

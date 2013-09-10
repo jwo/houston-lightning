@@ -8,7 +8,10 @@
   </div>
   <div ng-class="{'has-error': !validTwitter(), 'form-group': true }">
     <label class='control-label' for="twitter">Your twitter handle</label>
-    <input type="text" class="form-control input-lg" id="twitter" placeholder="Enter twitter" ng-model='talk.twitter' ng-change='validTwitter()'>
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control input-lg" id="twitter" placeholder="Enter twitter" ng-model='talk.twitter' ng-change='validTwitter()'>
+    </div>
     <span class='help-block' ng-show='!validTwitter()'>{{ TwitterValidationMessage }}</span>
   </div>
   <div ng-class="{'has-error': !validEmail(), 'form-group': true }">

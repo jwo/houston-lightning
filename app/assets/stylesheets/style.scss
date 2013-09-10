@@ -1,6 +1,18 @@
-ol.talks { 
-  margin-left: 0;
-  li .current {
+h1.brand {
+  text-align: center;
+  padding: 0.5em;
+  color: #333333;
+}
+.talks { 
+  .current {
     font-weight: bold;
+  }
+}
+
+.ondeck {
+  border-top: 1px solid #ccc;
+  margin-top: 5em;
+  img.media-object {
+    width: 86px;
   }
 }

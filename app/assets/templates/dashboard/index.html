@@ -7,25 +7,50 @@
 </div>
 
 <div ng-repeat="talk in talks | filter:isCurrentTalk" ng-show="$last">
-  
-  <div class="progress">
-    <div class="progress-bar progress-bar-success" role="progressbar"
-      aria-valuenow="{{progressAsInt}}" aria-valuemin="0" aria-valuemax="100"
-      ng-style="{width: progressAsPercentage()}">
-      <span class="sr-only">{{progressAsInt}} Complete</span>
+
+  <div class="panel panel-info">
+  <div class="panel-heading">
+    <h2>{{talk.name}}: <small>@{{talk.twitter}}</small></h2>
+  </div>
+  <div class="panel-body">
+    <div class="media">
+      <div class="pull-left">
+        <p>
+          <gravatar-image data-email="talk.email" data-size="120" data-rating="pg" data-default="404" data-secure="true" data-css-class="img-rounded media-object"></gravatar-image>
+        </p>
+      </div>
+      <div class="media-body">
+        <h3>{{talk.name}}</h3>
+        <p>{{talk.description}}</p>
+      </div>
     </div>
   </div>
-
-  <div>
-    <img></img>
-    <h1>{{talk.name}}</h1>
-    <p>{{talk.description}}</p>
-    <h3>t: {{talk.twitter}}</h3>
+  <div class="panel-footer">
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar"
+        aria-valuenow="{{progressAsInt}}" aria-valuemin="0" aria-valuemax="100"
+        ng-style="{width: progressAsPercentage()}">
+        <span class="sr-only">{{progressAsInt}} Complete</span>
+      </div>
+    </div>
   </div>
 </div>
-<div ng-repeat="talk in talks | filter:remainingTalks" ng-show="$first">
-  [on deck]
-  <img></img>
-  <h5>{{talk.name}}</h5>
-  <h6>t: {{talk.twitter}}</h6>
+
 </div>
+<div class="ondeck">
+<h2>On Deck:</h2>
+
+<ul class="media-list">
+  <li ng-repeat="talk in talks | filter:remainingTalks" class="media">
+  <div class="pull-left">
+    <p>
+      <gravatar-image data-email="talk.email" data-size="60" data-rating="pg" data-default="https://identicons.github.com/{{talk.twitter}}.png" data-secure="true" data-css-class=" media-object img-thumbnail"></gravatar-image>
+    </p>
+  </div>
+  <div class="media-body">
+    <h4>{{talk.name}}</h4>
+    <p>{{talk.description}}</p>
+    <h6>t: @{{talk.twitter}}</h6>
+  </div>
+  </li>
+</ul>
