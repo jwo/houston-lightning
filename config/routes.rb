@@ -7,7 +7,7 @@ HoustonLightning::Application.routes.draw do
     end
 
     def matches?(request)
-      request.format == mime_type
+      request.format == mime_type || request.format == '*/*'
     end
   end
 
