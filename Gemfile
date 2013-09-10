@@ -8,6 +8,7 @@ gem 'puma', "~> 2.0"
 gem 'pg'
 gem 'active_model_serializers'
 gem 'sass-rails'
+gem 'uglifier'
 gem 'coffee-rails'
 gem 'bootstrap-sass', :git => 'git://github.com/thomas-mcdonald/bootstrap-sass.git', :branch => '3'
 gem 'angular-rails'
@@ -16,6 +17,7 @@ gem 'dotenv-rails'
 gem 'pusher'
 gem 'asset_sync'
 gem 'eco'
+gem 'ngmin-rails'
 
 group :production do
   gem 'rails_12factor'
