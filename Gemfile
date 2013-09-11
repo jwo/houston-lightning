@@ -16,6 +16,7 @@ gem 'dotenv-rails'
 gem 'pusher'
 gem 'asset_sync'
 gem 'eco'
+gem 'ngmin-rails', github: 'jasonm/ngmin-rails'
 
 group :production do
   gem 'rails_12factor'
