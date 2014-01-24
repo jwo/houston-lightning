@@ -16,7 +16,7 @@ gem 'dotenv-rails'
 gem 'pusher'
 gem 'asset_sync'
 gem 'eco'
-gem 'ngmin-rails', github: 'jasonm/ngmin-rails'
+gem 'ngmin-rails'
 gem 'uglifier'
 
 group :production do
